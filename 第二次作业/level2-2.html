@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [[1, 2], [3, 4,], [6, 7, 9, [11, 12, [12, 13, [14]]]], 10]
+
+function bianping(arr){
+    var res=[];
+    for(var i=0;i<arr.length;i++){
+        var item=arr[i];
+        if(Array.isArray(item)){
+
+            res=res.concat(bianping(item));
+        }else{
+            res.push(item);
+        }
+    }
+    return res;
+}
+console.log(bianping(arr));
+
+
+
+    </script>
+</body>
+</html>

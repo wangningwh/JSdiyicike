@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr='ABCDEEF,GHJKKM';
+        function duplicates(arr) {
+    var arr_value = [];
+    arr_value[0]=arr[0];
+    arr_times=[];
+    
+    for(var i = 0; i < arr.length; i++){
+        let flag=1;
+        for(var j = 0; j < arr_value.length; j++){
+            if(arr[i] == arr_value[j]){
+                flag=0;
+            }
+        }
+        if(flag==1)
+        arr_value.push(arr[i])
+    }
+        for(var j = 0; j < arr_value.length; j++){
+            arr_times[j]=0;
+        }
+        console.log(arr_value);
+        console.log(arr_times);
+    for(var i = 0; i < arr.length; i++){
+        for(var j = 0; j < arr_value.length; j++){
+            if(arr[i] == arr_value[j]){
+                arr_times[j]++;
+            }
+        }
+    }
+    console.log(arr_times);
+
+for(var j = 0; j < arr_times.length; j++){
+            if(arr_times[j]>1){
+                while(arr_times[j]>0){
+                    console.log(arr_value[j]);
+                    arr_times[j]--
+                }
+            }
+        }
+    }
+duplicates(arr) 
+    </script>
+</body>
+</html>
